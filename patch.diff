@@ -1,0 +1,10 @@
+diff --git a/mediapipe/util/tflite/tflite_gpu_runner.cc b/mediapipe/util/tflite/tflite_gpu_runner.cc
+index 5445f02..78af4f6 100644
+--- a/mediapipe/util/tflite/tflite_gpu_runner.cc
++++ b/mediapipe/util/tflite/tflite_gpu_runner.cc
+@@ -214,7 +214,7 @@ absl::Status TFLiteGPURunner::InitializeOpenCL(
+   MP_RETURN_IF_ERROR(cl_environment_->NewInferenceBuilder(
+       cl_options, std::move(*graph_cl_), builder));
+ #endif
+-  return absl::OkStatus();
++  return mediapipe::UnimplementedError("Currently only Android is supported");
